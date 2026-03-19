@@ -30,6 +30,7 @@ def build_initial_state() -> tuple[dict[str, dict[str, str]], list[str]]:
     return users, schedule
 
 """
+Implements Confidentiality by:
 Allows the user to login
 If user is admin, they can view and edit the schedule and create new users.
 If user is a regular user, they can only view the schedule.

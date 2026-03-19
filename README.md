@@ -14,7 +14,3 @@ This workspace contains a simple Python script that demonstrates:
 
 - Admin: `admin / admin123`
 - User: `user / password`
-
-## CIA triad
-
-The sort script implements Confidentiality because only the admin account is allowed to change the schedule.
