@@ -1,19 +1,21 @@
 "RBAC schedule app"
 
-
-from __future__ import annotations
-
-from dataclasses import dataclass
-
-
 ADMIN_USERNAME = "admin"
 ADMIN_PASSWORD = "admin123"  # demo-only
 
-"Stores the users, their passwords, and roles along with the schedule"
-@dataclass(frozen=True)
+"""
+Implements Confidentiality by:
+Allows the user to login
+If user is admin, they can view and edit the schedule and create new users.
+If user is a regular user, they can only view the schedule.
+"""
 class AuthenticatedUser:
     username: str
     role: str  # "admin" or "user"
+
+    def __init__(self, *, username: str, role: str) -> None:
+        self.username = username
+        self.role = role
 
 
 def build_initial_state() -> tuple[dict[str, dict[str, str]], list[str]]:
@@ -29,12 +31,6 @@ def build_initial_state() -> tuple[dict[str, dict[str, str]], list[str]]:
     ]
     return users, schedule
 
-"""
-Implements Confidentiality by:
-Allows the user to login
-If user is admin, they can view and edit the schedule and create new users.
-If user is a regular user, they can only view the schedule.
-"""
 def login(users: dict[str, dict[str, str]]) -> AuthenticatedUser:
     username = input("Username: ").strip()
     password = input("Password: ")
@@ -178,7 +174,7 @@ def admin_menu(user: AuthenticatedUser, users: dict[str, dict[str, str]], schedu
 "Automatically runs the app when executed"
 def main() -> None:
     users, schedule = build_initial_state()
-    print("RBAC Schedule App (bare-bones)")
+    print("RBAC Schedule App")
     print("------------------------------")
     print(f"Demo accounts: admin/{ADMIN_PASSWORD} and user/password\n")
 
