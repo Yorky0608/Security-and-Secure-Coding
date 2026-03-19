@@ -17,4 +17,4 @@ This workspace contains a simple Python script that demonstrates:
 
 ## CIA triad
 
-The sort script implements Confidentiality because only and admin account is allowed to change the schedule.
+The sort script implements Confidentiality because only the admin account is allowed to change the schedule.
