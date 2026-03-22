@@ -1,11 +1,3 @@
-"""RBAC + authentication mini demo (intentionally simple).
-
-CIA triad (Confidentiality):
-This script demonstrates *confidentiality* by enforcing role-based access control.
-Only the right role can access the protected action, so data/actions meant for
-admins are not disclosed to regular users (and vice versa).
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -24,28 +16,24 @@ USERS: dict[str, User] = {
 }
 
 
+"""
+Simulates login using a hardcoded username.
+Change LOGIN_AS to "alice" or "bob" to simulate different users.
+"""
 def login_simulation() -> User:
-	"""Simulates login using a hardcoded username.
-
-	No password prompting, hashing, or external input.
-	Change LOGIN_AS to "alice" or "bob" to simulate different users.
-	"""
-
 	LOGIN_AS = "alice"  # <-- change to "bob" to simulate a regular user
 	return USERS[LOGIN_AS]
 
 
+"""Protected action: only admins can access."""
 def admin_only_action(current_user: User) -> None:
-	"""Protected action: only admins can access."""
-
 	if current_user.role != "admin":
 		raise PermissionError("admin_only_action requires role=admin")
 	print("[admin] Viewing admin-only report...")
 
 
+"""Protected action: only regular users can access."""
 def user_only_action(current_user: User) -> None:
-	"""Protected action: only regular users can access."""
-
 	if current_user.role != "user":
 		raise PermissionError("user_only_action requires role=user")
 	print("[user] Viewing user-only dashboard...")
