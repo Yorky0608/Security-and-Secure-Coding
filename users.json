@@ -1,0 +1,17 @@
+{
+    "Yorky": {
+        "salt": "x2vdQ0eTvOjlqgg1akOjMw==",
+        "hash": "f046d76878540e20f4484af477c736dec516254d040760122c6381145e142b3f",
+        "role": "user"
+    },
+    "admin67qt": {
+        "salt": "gpoC7gNw9tlUdZAn8w7jbw==",
+        "hash": "cf32abf7c6ec8fb29168e650171b68450ec23cfdde0a8a495b5bbbc74c8bb955",
+        "role": "admin"
+    },
+    "trying": {
+        "salt": "jQHdPDZze7BNBnrGLxjJKw==",
+        "hash": "b2bc8d77835f4b5b916602c4061826e43a9a2e560c59475bf2117a0380ea1db0",
+        "role": "user"
+    }
+}
