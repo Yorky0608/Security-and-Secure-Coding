@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "role": "admin",
+    "salt_b64": "anvEYA9jJdLycWDdnZrIaw==",
+    "iterations": 200000,
+    "dk_b64": "GA+fyYCcgmIf23IoFhrFKgW/6/5UGtJw1RrOou6elHk="
+  },
+  "user": {
+    "role": "user",
+    "salt_b64": "8NYAqnc4mwfv+MJie1OvEg==",
+    "iterations": 200000,
+    "dk_b64": "G42A16VHVxiWCUNETWWhchwRPu2Y4E8PoDJvYU6ASP0="
+  }
+}
