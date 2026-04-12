@@ -1,7 +1,1 @@
 cryptography>=42.0.0
-
-python .\Module_4\secure_vault.py encrypt --message "Hello World" --out-file .\Module_4\Hello_World.bundle.json
-python .\Module_4\secure_vault.py decrypt .\Module_4\Hello_World.bundle.json
-
-python .\Module_4\secure_vault.py encrypt --in-file .\Module_4\somefile.txt --out-file .\Module_4\somefile.bundle.json
-python .\Module_4\secure_vault.py decrypt .\Module_4\somefile.bundle.json --out-file .\Module_4\somefile.decrypted
