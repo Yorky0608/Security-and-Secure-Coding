@@ -16,7 +16,6 @@ VALUE_NAME = "EncryptionKey"
 
 
 def _normalize_key_for_registry(key):
-    """Normalize a Fernet key into a registry-storable string."""
     if key is None:
         raise ValueError("key cannot be None")
     if isinstance(key, bytes):
@@ -27,7 +26,6 @@ def _normalize_key_for_registry(key):
 
 
 def _normalize_key_for_fernet(key_value):
-    """Normalize a registry-read value into Fernet-compatible bytes."""
     if key_value is None:
         return None
     if isinstance(key_value, bytes):
@@ -38,13 +36,7 @@ def _normalize_key_for_fernet(key_value):
 
 
 def store_key(key):
-    """
-    Store encryption key in Windows registry
-    """
-    # TODO:
-    # 1. Create/Open registry key
-    # 2. Store value
-    # 3. Close key
+
     key_str = _normalize_key_for_registry(key)
     with winreg.CreateKeyEx(
         winreg.HKEY_CURRENT_USER,
@@ -56,14 +48,7 @@ def store_key(key):
 
 
 def read_key():
-    """
-    Read encryption key from registry
-    """
-    # TODO:
-    # 1. Open registry key
-    # 2. Read value
-    # 3. Return key
-    # 4. Return None if not found
+
     try:
         with winreg.OpenKey(
             winreg.HKEY_CURRENT_USER,
@@ -81,14 +66,7 @@ def read_key():
 
 
 def get_or_create_key():
-    """
-    Get key or create new one if missing
-    """
-    # TODO:
-    # 1. Try read_key()
-    # 2. If None → generate key
-    # 3. Store key
-    # 4. Return key
+  
     key = read_key()
     if key is not None:
         return key
